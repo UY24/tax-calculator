@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Deduction Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tax Deduction Calculator</h1>
+      <form id="tax-form">
+        <div class="form-group">
+          <label for="gross-income">Gross Annual Income (₹):</label>
+          <div class="in-row">
+            <input type="text" id="gross-income" name="grossIncome" />
+            <span class="tooltip">Enter numbers only</span>
+            <i class="error-icon">!</i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="extra-income">Extra Income (₹):</label>
+          <input type="text" id="extra-income" name="extraIncome" />
+          <span class="tooltip">Enter numbers only (optional)</span>
+          <i class="error-icon">!</i>
+        </div>
+        <div class="form-group">
+          <label for="deductions">Total Applicable Deductions (₹):</label>
+          <input type="text" id="deductions" name="deductions" />
+          <span class="tooltip">Enter numbers only</span>
+          <i class="error-icon">!</i>
+        </div>
+        <div class="form-group">
+          <label for="age">Age Group:</label>
+          <select id="age" name="age">
+            <option value="">Select Age Group</option>
+            <option value="<40">Less than 40</option>
+            <option value=">=40 && <60">40 to 59</option>
+            <option value=">=60">60 or more</option>
+          </select>
+          <i class="error-icon">!</i>
+        </div>
+        <button type="submit">Calculate Tax</button>
+      </form>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h2>
+            Your Overall income will be ₹<span id="overall-income"></span> after
+            tax deduction
+          </h2>
+          <p id="tax-amount">Tax Amount: ₹<span></span></p>
+          <button id="close-modal">Close</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
