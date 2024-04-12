@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const deductionsInput = document.getElementById("deductions");
   const ageSelect = document.getElementById("age");
   const errorIcons = document.querySelectorAll(".error-icon");
-  const tooltips = document.querySelectorAll(".tooltip");
   const modal = document.getElementById("modal");
   const closeModalBtn = document.getElementById("close-modal");
 
@@ -62,17 +61,26 @@ document.addEventListener("DOMContentLoaded", function () {
   function validateInputs() {
     let isValid = true;
 
-    if (grossIncomeInput.value.trim() === "") {
+    if (
+      grossIncomeInput.value.trim() === "" ||
+      isNaN(parseFloat(grossIncomeInput.value))
+    ) {
       showError(grossIncomeInput);
       isValid = false;
     }
 
-    if (extraIncomeInput.value.trim() === "") {
+    if (
+      extraIncomeInput.value.trim() === "" ||
+      isNaN(parseFloat(extraIncomeInput.value))
+    ) {
       showError(extraIncomeInput);
       isValid = false;
     }
 
-    if (deductionsInput.value.trim() === "") {
+    if (
+      deductionsInput.value.trim() === "" ||
+      isNaN(parseFloat(deductionsInput.value))
+    ) {
       showError(deductionsInput);
       isValid = false;
     }
@@ -87,19 +95,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showError(input) {
     const errorIcon = input.nextElementSibling;
-    const tooltip = input.nextElementSibling.nextElementSibling;
 
     errorIcon.style.display = "block";
-    tooltip.style.display = "block";
   }
 
   function clearErrors() {
     errorIcons.forEach(function (icon) {
       icon.style.display = "none";
-    });
-
-    tooltips.forEach(function (tooltip) {
-      tooltip.style.display = "none";
     });
   }
 });
