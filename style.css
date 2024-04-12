@@ -16,63 +16,56 @@ h1 {
 
 .form-group {
   margin-bottom: 15px;
+  position: relative;
 }
-
+.form-group-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 label {
   display: block;
   margin-bottom: 5px;
 }
 
-input:hover .tooltip,
-select:hover .tooltip {
-  background-color: #ddd;
-  padding: 50px;
-  border-radius: 4px;
-  font-size: 12px;
-}
-.in-row {
-  display: flex;
-}
-.error-icon {
-  
-  display: none;
-  color: red;
-  font-size: 16px;
-  cursor: pointer;
-}
-
 input,
 select {
-  width: calc(100% - 35px); 
+  width: calc(100% - 35px);
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-.tooltip {
-  position: relative;
+.error-icon {
   display: none;
+  position: absolute;
+  right: 5px;
+  top: 70%;
+  transform: translateY(-50%);
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.tooltip::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ddd;
-  padding: 5px;
-  border-radius: 4px;
-  font-size: 12px;
+.hint {
+  cursor: pointer;
 }
 
 .error-icon:hover {
-  opacity: 0.8; 
+  display: block;
+}
+input,
+select {
+  width: calc(100% - 35px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.error-icon:hover + .tooltip {
-  display: block;
+.error-icon:hover {
+  opacity: 0.8;
 }
 
 .modal {
@@ -117,7 +110,7 @@ button[type="submit"] {
   cursor: pointer;
 }
 form {
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
   padding: 20px;
   border-radius: 4px;
 }

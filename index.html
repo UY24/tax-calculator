@@ -4,41 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tax Deduction Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <h1>Tax Deduction Calculator</h1>
+
       <form id="tax-form">
         <div class="form-group">
-          <label for="gross-income">Gross Annual Income (₹):</label>
-          <div class="in-row">
-            <input type="text" id="gross-income" name="grossIncome" />
-            <span class="tooltip">Enter numbers only</span>
-            <i class="error-icon">!</i>
+          <div class="form-group-row">
+            <label for="gross-income">Gross Annual Income (₹): </label
+            ><i
+              class="fa fa-question-circle-o"
+              title="Gross Annual Income is your total salary in a year before deductions"
+              style="font-size: large; color: gray; cursor: pointer"
+            ></i>
           </div>
+
+          <input type="text" id="gross-income" name="grossIncome" />
+          <i
+            class="error-icon fa fa-exclamation-circle"
+            title="Enter numbers only"
+          ></i>
         </div>
         <div class="form-group">
-          <label for="extra-income">Extra Income (₹):</label>
+          <div class="form-group-row">
+            <label for="extra-income">Extra Income (₹):</label
+            ><i
+              class="fa fa-question-circle-o"
+              title="Extra Income you earned apart from gross annual salary"
+              style="font-size: large; color: gray; cursor: pointer"
+            ></i>
+          </div>
           <input type="text" id="extra-income" name="extraIncome" />
-          <span class="tooltip">Enter numbers only (optional)</span>
-          <i class="error-icon">!</i>
+          <i
+            class="error-icon fa fa-exclamation-circle"
+            title="Enter numbers only"
+          ></i>
         </div>
         <div class="form-group">
-          <label for="deductions">Total Applicable Deductions (₹):</label>
+          <div class="form-group-row">
+            <label for="deductions">Total Applicable Deductions (₹):</label
+            ><i
+              class="fa fa-question-circle-o"
+              title="Your total deduction amount"
+              style="font-size: large; color: gray; cursor: pointer"
+            ></i>
+          </div>
           <input type="text" id="deductions" name="deductions" />
-          <span class="tooltip">Enter numbers only</span>
-          <i class="error-icon">!</i>
+          <i
+            class="error-icon fa fa-exclamation-circle"
+            title="Enter numbers only"
+          ></i>
         </div>
         <div class="form-group">
-          <label for="age">Age Group:</label>
+          <div class="form-group-row">
+            <label for="age">Age Group:</label
+            ><i
+              class="fa fa-question-circle-o"
+              title="age group you belong in"
+              style="font-size: large; color: gray; cursor: pointer"
+            ></i>
+          </div>
           <select id="age" name="age">
             <option value="">Select Age Group</option>
             <option value="<40">Less than 40</option>
             <option value=">=40 && <60">40 to 59</option>
             <option value=">=60">60 or more</option>
           </select>
-          <i class="error-icon">!</i>
+          <i
+            class="error-icon fa fa-exclamation-circle"
+            title="Select the valid age"
+          ></i>
         </div>
         <button type="submit">Calculate Tax</button>
       </form>

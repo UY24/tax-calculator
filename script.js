@@ -67,6 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
+    if (extraIncomeInput.value.trim() === "") {
+      showError(extraIncomeInput);
+      isValid = false;
+    }
+
     if (deductionsInput.value.trim() === "") {
       showError(deductionsInput);
       isValid = false;
