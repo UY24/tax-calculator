@@ -40,5 +40,5 @@ This is a simple web application to calculate tax deduction based on gross annua
   ![alt text](image-7.png)
   ![alt text](image-8.png)
 
--final ans with popup
-![alt text](image-9.png)
+- final ans with popup
+  ![alt text](image-9.png)
